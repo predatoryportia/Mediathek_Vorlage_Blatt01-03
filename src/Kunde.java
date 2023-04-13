@@ -45,7 +45,7 @@ class Kunde
     }
 
     /**
-     * Gibt die {@link Kundenummer} zurück.
+     * Gibt die {@link Kundennummer} zurück.
      * 
      * @ensure result != null
      */
