@@ -63,8 +63,25 @@ public class VerleihServiceImplTest
     }
 
     @Test
-    public void testNochEinTestFall1()
+    public void testMedienWerdenAusgeliehen()
     {
+        Kunde gelb = _homer;
+
+        List<Medium> medienListe = new ArrayList<>();
+        medienListe.add(this._shape);
+        medienListe.add(this._bad);
+
+        _verleihService.verleiheAn(gelb, medienListe, Datum.heute());
+
+        assertTrue(_verleihService.sindAlleVerliehen(medienListe));
+        assertFalse(_verleihService.sindAlleNichtVerliehen(medienListe));
+
+        for (Medium m : medienListe) {
+
+            assertTrue(_verleihService.istVerliehen(m));
+
+        }
+
     }
 
     @Test
